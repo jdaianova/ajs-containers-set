@@ -17,8 +17,12 @@ export default class Team {
       try {
         this.add(chars[i]);
       } catch (error) {
-        console.error(error);
+
       }
     }
+  }
+
+  toArray() {
+    return [...this.members];
   }
 }

@@ -4,8 +4,7 @@ export default class Team {
   }
 
   add(char) {
-    const isMember = [...this.members].find((member) => member.name === char.name);
-    if (isMember) {
+    if (this.members.has(char)) {
       throw new Error('this member is already part of the team');
     } else {
       this.members.add(char);
@@ -17,7 +16,7 @@ export default class Team {
       try {
         this.add(chars[i]);
       } catch (error) {
-
+        return;
       }
     }
   }
